@@ -53,7 +53,7 @@ if __name__ == "__main__":
         "hivemind": 
            {"key": "XXX",
             "password": "XXX",
-            "host": "XXX",
+            "host": "0.0.0.0",
             "port": 5678
            }
     }
