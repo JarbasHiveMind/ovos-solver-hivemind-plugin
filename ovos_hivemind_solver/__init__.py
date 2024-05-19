@@ -49,5 +49,13 @@ class HiveMindSolver(QuestionSolver):
 
 
 if __name__ == "__main__":
-    bot = HiveMindSolver()
+    cfg = {
+        "hivemind": 
+           {"key": "XXX",
+            "password": "XXX",
+            "host": "XXX",
+            "port": 5678
+           }
+    }
+    bot = HiveMindSolver(config=cfg)
     print(bot.spoken_answer("what is th speed of light?"))
