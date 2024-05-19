@@ -3,7 +3,7 @@
 exposes a hivemind connection as a solver plugin
 
 use cases:
-- allow your OVOS device to get responses from HiveMind, via dedicated skill or pipeline (TODO - companion integrations)
+- allow your OVOS device to get responses from HiveMind, via companion fallback skill, ie, ask a smarter OVOS install to handle the utterance
 - expose HiveMind to any OpenAI compatible UI, via [ovos-persona-server](https://github.com/OpenVoiceOS/ovos-persona-server)
 - Integrate HiveMind/OVOS into a [MOS (Mixture Of Solvers)](https://github.com/TigreGotico/ovos-MoS)
 
