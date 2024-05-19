@@ -1,6 +1,6 @@
 # HiveMind solver
 
-exposes a hivemind connection as a solver plugin
+exposes a [HiveMind](https://jarbashivemind.github.io/HiveMind-community-docs/) connection as a [OVOS solver plugin](https://openvoiceos.github.io/ovos-technical-manual/solvers/)
 
 use cases:
 - allow your OVOS device to get responses from HiveMind, via companion fallback skill, ie, ask a smarter OVOS install to handle the utterance
