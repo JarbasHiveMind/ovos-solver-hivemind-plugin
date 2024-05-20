@@ -2,6 +2,7 @@ from hivemind_bus_client import HiveMessageBusClient, HiveMessage, \
     HiveMessageType
 from ovos_bus_client.message import Message
 from ovos_plugin_manager.templates.solvers import QuestionSolver
+from ovos_utils.log import LOG
 
 
 class HiveMindSolver(QuestionSolver):
@@ -12,17 +13,17 @@ class HiveMindSolver(QuestionSolver):
         config = config or {}
         super().__init__(config)
         self.hm = None
-        self.connect()
+        if self.config.get("autoconnect"):
+            self.connect()
+
+    def bind(self, hm: HiveMessageBusClient):
+        """if you want to re-use a open connection"""
+        self.hm = hm
 
     def connect(self):
-        hm_settings = self.config.get("hivemind", {})
-        key = hm_settings["key"]
-        pswd = hm_settings["password"]
-        host = hm_settings["host"]
-        port = hm_settings.get("port", 5678)
-        self.hm = HiveMessageBusClient(key=key, password=pswd,
-                                       host=host, port=port,
-                                       useragent="ovos-hivemind-solver")
+        """assume identity set beforehand, eg via `hivemind-client set-identity`
+        """
+        self.hm = HiveMessageBusClient(useragent="ovos-hivemind-solver")
         self.hm.run_in_thread()
 
     # abstract Solver methods
@@ -30,6 +31,9 @@ class HiveMindSolver(QuestionSolver):
         return {"answer": self.get_spoken_answer(query, context)}
 
     def get_spoken_answer(self, query, context=None):
+        if self.hm is None:
+            LOG.error("not connected to HiveMind")
+            return
         context = context or {}
         if "session" in context:
             lang = context["session"]["lang"]
@@ -50,12 +54,7 @@ class HiveMindSolver(QuestionSolver):
 
 if __name__ == "__main__":
     cfg = {
-        "hivemind": 
-           {"key": "XXX",
-            "password": "XXX",
-            "host": "0.0.0.0",
-            "port": 5678
-           }
+        "autoconnect": True
     }
     bot = HiveMindSolver(config=cfg)
     print(bot.spoken_answer("what is th speed of light?"))
