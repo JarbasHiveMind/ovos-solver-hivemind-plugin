@@ -7,6 +7,10 @@ use cases:
 - expose HiveMind to any OpenAI compatible UI, via [ovos-persona-server](https://github.com/OpenVoiceOS/ovos-persona-server)
 - Integrate HiveMind/OVOS into a [MOS (Mixture Of Solvers)](https://github.com/TigreGotico/ovos-MoS)
 
+## Install
+
+`pip install ovos-solver-hivemind-plugin`
+
 ## Setup
 
 You need to register the solver in the HiveMind server
@@ -50,6 +54,10 @@ $ hivemind-client test-identity
 ```
 
 ## Usage
+
+For usage with any solver framework, such as persona, use `"ovos-solver-hivemind-plugin"` for the solver id
+
+Standalone usage
 
 ```python
 from ovos_hivemind_solver import HiveMindSolver
