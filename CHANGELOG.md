@@ -1,5 +1,9 @@
 # Changelog
 
+## [V0.0.0a6](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/V0.0.0a6) (2024-05-21)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/V0.0.0a5...V0.0.0a6)
+
 ## [V0.0.0a5](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/V0.0.0a5) (2024-05-21)
 
 [Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/V0.0.0a4...V0.0.0a5)
