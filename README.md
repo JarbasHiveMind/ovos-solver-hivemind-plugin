@@ -3,7 +3,7 @@
 exposes a hivemind connection as a solver plugin
 
 use cases:
-- allow your OVOS device to get responses from a remote HiveMind, via [companion skill](https://github.com/JarbasHiveMind/ovos-skill-fallback-hivemind)
+- allow your apps to get responses from a remote HiveMind
 - expose HiveMind to any OpenAI compatible UI, via [ovos-persona-server](https://github.com/OpenVoiceOS/ovos-persona-server)
 - Integrate HiveMind/OVOS into a [MOS (Mixture Of Solvers)](https://github.com/TigreGotico/ovos-MoS)
 
