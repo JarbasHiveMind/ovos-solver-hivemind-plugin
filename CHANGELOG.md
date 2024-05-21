@@ -2,7 +2,11 @@
 
 ## [V0.0.0a2](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/V0.0.0a2) (2024-05-20)
 
-[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/87eae1c8e7e237b3fe29d4b83b8bce7291d8ef20...V0.0.0a2)
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/V0.0.0a3...V0.0.0a2)
+
+## [V0.0.0a3](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/V0.0.0a3) (2024-05-20)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/87eae1c8e7e237b3fe29d4b83b8bce7291d8ef20...V0.0.0a3)
 
 
 
