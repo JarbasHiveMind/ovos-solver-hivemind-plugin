@@ -28,28 +28,9 @@ class HiveMindSolver(QuestionSolver):
         self.hm = HiveMessageBusClient(useragent="ovos-hivemind-solver")
         self.hm.run_in_thread()
         self.hm.on_mycroft("speak", self._receive_answer)
-        # NOTE: this message not yet introduced in ovos-core
         self.hm.on_mycroft("ovos.utterance.handled", self._end_of_response)
 
-        ##############
-        # HACK - waiting for https://github.com/OpenVoiceOS/ovos-core/pull/478
-        # TODO - new bus message in ovos-core
-        #  to unambiguosly identify end of utterance parsing
-        #  currently these are 4 possible outcomes for any request
-        #  does not account for OCP pipeline requests
-        self.hm.on_mycroft("ovos.utterance.cancelled",
-                           self._end_of_response)
-        self.hm.on_mycroft("complete_intent_failure",
-                           self._end_of_response)
-        self.hm.on_mycroft("mycroft.skill.handler.complete",
-                           self._end_of_response)
-        self.hm.on_mycroft( "skill.converse.response",
-                           self._end_of_response)
-
     def _end_of_response(self, message):
-        if message.type == "skill.converse.response":
-            if not message.data.get("result"):
-                return
         self._response.set()
 
     def _receive_answer(self, message):
