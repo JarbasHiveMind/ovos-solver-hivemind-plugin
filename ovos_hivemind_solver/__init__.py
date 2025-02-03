@@ -6,12 +6,9 @@ from threading import Event
 
 
 class HiveMindSolver(QuestionSolver):
-    enable_tx = False
-    priority = 70
-
     def __init__(self, config=None):
         config = config or {}
-        super().__init__(config)
+        super().__init__(config, enable_tx=False, priority = 70)
         self.hm = None
         self._response = Event()
         self._responses = []
@@ -26,7 +23,7 @@ class HiveMindSolver(QuestionSolver):
         """assume identity set beforehand, eg via `hivemind-client set-identity`
         """
         self.hm = HiveMessageBusClient(useragent="ovos-hivemind-solver")
-        self.hm.run_in_thread()
+        self.hm.connect()
         self.hm.on_mycroft("speak", self._receive_answer)
         self.hm.on_mycroft("ovos.utterance.handled", self._end_of_response)
 
@@ -68,4 +65,4 @@ if __name__ == "__main__":
         "autoconnect": True
     }
     bot = HiveMindSolver(config=cfg)
-    print(bot.spoken_answer("what is th speed of light?"))
+    print(bot.spoken_answer("what is the speed of light?"))
