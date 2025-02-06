@@ -49,9 +49,6 @@ class HiveMindSolver(QuestionSolver):
         self._extend_timeout = True
 
     # abstract Solver methods
-    def get_data(self, query, context=None):
-        return {"answer": self.get_spoken_answer(query, context)}
-
     def get_spoken_answer(self, query, context=None, timeout=5):
         if self.hm is None:
             LOG.error("not connected to HiveMind")
