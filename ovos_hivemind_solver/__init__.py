@@ -81,4 +81,4 @@ if __name__ == "__main__":
         "autoconnect": True
     }
     bot = HiveMindSolver(config=cfg)
-    print(bot.spoken_answer("what is th speed of light?"))
+    print(bot.spoken_answer("what is the speed of light?"))

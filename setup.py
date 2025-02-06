@@ -5,7 +5,7 @@ from setuptools import setup
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
 
-with open("README.md", "r") as fh:
+with open(f"{BASEDIR}/README.md", "r") as fh:
     long_desc = fh.read()
 
 
@@ -29,7 +29,7 @@ def get_version():
                     '# END_VERSION_BLOCK' in line):
                 break
     version = f"{major}.{minor}.{build}"
-    if alpha:
+    if int(alpha):
         version += f"a{alpha}"
     return version
 
