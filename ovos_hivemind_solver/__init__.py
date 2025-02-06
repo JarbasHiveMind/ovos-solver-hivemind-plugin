@@ -1,8 +1,10 @@
 from hivemind_bus_client import HiveMessageBusClient
 from ovos_bus_client.message import Message
+from ovos_plugin_manager.templates.language import LanguageDetector, LanguageTranslator
 from ovos_plugin_manager.templates.solvers import QuestionSolver
 from ovos_utils.log import LOG
 from threading import Event
+from typing import Optional
 
 
 class HiveMindSolver(QuestionSolver):
