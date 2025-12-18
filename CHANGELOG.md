@@ -1,16 +1,16 @@
 # Changelog
 
-## [0.0.3a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.3a1) (2025-02-06)
+## [0.0.4a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.4a1) (2025-12-18)
 
-[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/V0.0.2...0.0.3a1)
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/V0.0.3...0.0.4a1)
 
 **Merged pull requests:**
 
-- fix:typing [\#3](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/3) ([JarbasAl](https://github.com/JarbasAl))
+- Configure Renovate [\#5](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/5) ([renovate[bot]](https://github.com/apps/renovate))
 
-## [V0.0.2](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/V0.0.2) (2025-02-06)
+## [V0.0.3](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/V0.0.3) (2025-02-06)
 
-[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.2...V0.0.2)
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.3...V0.0.3)
 
 
 
