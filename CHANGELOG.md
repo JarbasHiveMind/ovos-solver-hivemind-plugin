@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.4a3](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.4a3) (2026-06-20)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.4a2...0.0.4a3)
+
+**Merged pull requests:**
+
+- build: modernize packaging \(pyproject\) + CI \(gh-automations\) [\#13](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/13) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.4a2](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.4a2) (2026-06-05)
 
 [Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.4a1...0.0.4a2)
