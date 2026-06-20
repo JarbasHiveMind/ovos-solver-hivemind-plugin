@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ovos-solver-hivemind-plugin"
+description = "A question solver plugin for OVOS"
+readme = "README.md"
+authors = [{ name = "jarbasAI", email = "jarbasai@mailfence.com" }]
+license = "MIT"
+requires-python = ">=3.10"
+dynamic = ["version", "dependencies"]
+
+[project.urls]
+Homepage = "https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin"
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.entry-points."neon.plugin.solver"]
+"ovos-solver-hivemind-plugin" = "ovos_hivemind_solver:HiveMindSolver"
+
+[tool.setuptools]
+packages = ["ovos_hivemind_solver"]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = { attr = "ovos_hivemind_solver.version.__version__" }
+dependencies = { file = ["requirements.txt"] }
