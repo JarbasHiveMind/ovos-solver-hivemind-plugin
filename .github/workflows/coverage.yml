@@ -1,0 +1,23 @@
+name: Code Coverage
+
+on:
+  pull_request:
+    branches: [dev]
+  workflow_dispatch:
+
+jobs:
+  coverage:
+    uses: OpenVoiceOS/gh-automations/.github/workflows/coverage.yml@dev
+    with:
+      python_version: '3.11'
+      coverage_source: 'ovos_hivemind_solver'
+      test_path: 'tests/'
+      # install_extras intentionally unset — the upstream workflow's
+      # `.[dev]` first-attempt path covers our test deps via the dev
+      # extras alias in pyproject.toml. Setting `install_extras: 'test'`
+      # triggers a buggy `pip install test` literal in gh-automations
+      # that tries to install a PyPI package named "test".
+      min_coverage: 0
+      # hivescope (in-process HiveMind topology simulator) plus the
+      # hivemind-core/plugin-manager prereleases its master node needs.
+      pre_install_pip: '"hivescope==0.5.0a2" "hivemind-plugin-manager==0.7.1a2" "hivemind-core==4.6.3a1"'

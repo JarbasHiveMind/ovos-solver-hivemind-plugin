@@ -15,9 +15,21 @@ dynamic = ["version", "dependencies"]
 Homepage = "https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin"
 
 [project.optional-dependencies]
-test = ["pytest"]
+test = [
+    "pytest",
+    "pytest-cov",
+    "hivescope",
+]
+# Alias so gh-automations' `pip install -e ".[dev]"` first-attempt path
+# resolves; without `dev` it falls through to a buggy `pip install test`
+# literal branch in the upstream workflow.
+dev = [
+    "pytest",
+    "pytest-cov",
+    "hivescope",
+]
 
-[project.entry-points."neon.plugin.solver"]
+[project.entry-points."opm.solver.question"]
 "ovos-solver-hivemind-plugin" = "ovos_hivemind_solver:HiveMindSolver"
 
 [tool.setuptools]
