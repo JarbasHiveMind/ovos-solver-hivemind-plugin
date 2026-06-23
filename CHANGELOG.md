@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.5a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.5a1) (2026-06-23)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.4a3...0.0.5a1)
+
+**Merged pull requests:**
+
+- fix: register solver under opm.solver.question + e2e tests [\#17](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/17) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.4a3](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.4a3) (2026-06-20)
 
 [Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.4a2...0.0.4a3)
