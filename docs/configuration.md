@@ -35,6 +35,9 @@ solver = HiveMindSolver(config={
 |---------------|--------|--------------------------|-------------|
 | `autoconnect` | bool   | `false`                  | Connect automatically at construction time. If `false`, call `solver.connect()` before the first query. |
 | `useragent`   | string | `"ovos-hivemind-solver"` | User-agent string sent to the hub in the handshake. |
+
+| Key           | Type   | Default                  | Description |
+|---------------|--------|--------------------------|-------------|
 | `site_id`     | string | from identity file       | Site ID for the connection. Overrides the value in the identity file. |
 | `lang`        | string | `"en-us"`                | Default language when no `lang` is present in the query context. |
 
@@ -50,4 +53,7 @@ hivemind-client set-identity \
   --host <hub_ip> --port 5678 --siteid solver
 ```
 
-There is no way to pass credentials inline — the identity file is the only source.
+There is no way to pass credentials inline. The identity file is the only source.
+
+---
+[← Solver integration](solver_integration.md) · [Home](../README.md)

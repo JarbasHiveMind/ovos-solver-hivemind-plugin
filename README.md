@@ -102,14 +102,14 @@ OpenAI-compatible client can then query HiveMind via the persona server's REST A
 
 ## Documentation
 
-- [`docs/solver_integration.md`](docs/solver_integration.md) — how the solver
+- [`docs/solver_integration.md`](docs/solver_integration.md): how the solver
   integrates with the OVOS solver framework.
-- [`docs/configuration.md`](docs/configuration.md) — full configuration reference.
+- [`docs/configuration.md`](docs/configuration.md): full configuration reference.
 
 ## Credits
 
 This work was sponsored by VisioLab, part of
-[Royal Dutch Visio](https://visio.org/) — the research and education center for
+[Royal Dutch Visio](https://visio.org/), the research and education center for
 assistive technology for blind and visually impaired people.
 
 ## License
