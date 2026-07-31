@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.5a2](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.5a2) (2026-07-31)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.5a1...0.0.5a2)
+
+**Merged pull requests:**
+
+- docs: rewrite README in Simplified Technical English [\#19](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/19) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.5a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.5a1) (2026-06-23)
 
 [Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.4a3...0.0.5a1)
