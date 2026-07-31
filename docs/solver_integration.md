@@ -70,3 +70,6 @@ class: ovos_hivemind_solver.HiveMindSolver
 
 The `neon.plugin.solver` group is the standard solver entry point shared across OVOS
 and compatible frameworks.
+
+---
+[Home](../README.md) · [Configuration →](configuration.md)
