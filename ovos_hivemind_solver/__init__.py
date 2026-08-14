@@ -32,9 +32,36 @@ class HiveMindSolver(QuestionSolver):
 
     def connect(self):
         """assume identity set beforehand, eg via `hivemind-client set-identity`
+
+        Keepalive websocket pings are enabled by default (10s interval / 5s
+        timeout) so the connection survives gaps between queries. Hub
+        implementations commonly drop idle clients ~15s after the last pong,
+        so these defaults are set safely under that window. Set
+        `websocket_ping_interval` to `0` in the config to disable keepalive
+        (`None` does not disable it — the client resolves `None` back to its
+        own default interval).
         """
         useragent = self.config.get("useragent", "ovos-hivemind-solver")
-        self.hm = HiveMessageBusClient(useragent=useragent)
+        ping_interval = self.config.get("websocket_ping_interval", 10)
+        ping_timeout = self.config.get("websocket_ping_timeout", 5)
+        try:
+            self.hm = HiveMessageBusClient(useragent=useragent,
+                                            websocket_ping_interval=ping_interval,
+                                            websocket_ping_timeout=ping_timeout)
+        except TypeError as e:
+            # only swallow the pre-keepalive-kwargs constructor signature;
+            # a TypeError from a bad config value must propagate.
+            # substring is CPython's stable "unexpected keyword argument"
+            # wording (not locale-dependent); chosen over inspect.signature
+            # so the check runs on the actual raised error, not a prediction
+            # of what the constructor accepts
+            if "unexpected keyword argument" not in str(e):
+                raise
+            LOG.warning("installed hivemind_bus_client does not support "
+                        "websocket keepalive kwargs, connection may be "
+                        "dropped by the hub during idle periods; "
+                        "please upgrade hivemind_bus_client")
+            self.hm = HiveMessageBusClient(useragent=useragent)
         self.hm.connect(site_id=self.config.get("site_id"))
         self.hm.on_mycroft("speak", self._receive_answer)
         self.hm.on_mycroft("ovos.utterance.handled", self._end_of_response)
