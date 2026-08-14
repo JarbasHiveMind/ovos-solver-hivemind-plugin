@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.6a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.6a1) (2026-08-14)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.5a2...0.0.6a1)
+
+**Merged pull requests:**
+
+- fix: enable websocket keepalive by default so the hub does not drop idle sessions [\#21](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/21) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.5a2](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.5a2) (2026-07-31)
 
 [Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.5a1...0.0.5a2)
