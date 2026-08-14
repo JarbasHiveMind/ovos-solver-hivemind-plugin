@@ -35,6 +35,8 @@ solver = HiveMindSolver(config={
 |---------------|--------|--------------------------|-------------|
 | `autoconnect` | bool   | `false`                  | Connect automatically at construction time. If `false`, call `solver.connect()` before the first query. |
 | `useragent`   | string | `"ovos-hivemind-solver"` | User-agent string sent to the hub in the handshake. |
+| `websocket_ping_interval` | number or `null` | `10` | Seconds between websocket keepalive pings. Hubs commonly drop idle clients ~15s after the last pong, so the default keeps the connection alive across slow queries. Set to `0` to disable (`null` falls back to the bus-client's own default interval). |
+| `websocket_ping_timeout`  | number or `null` | `5`  | Seconds to wait for a pong before the client considers the connection dead. `null` falls back to the bus-client's own default. |
 
 | Key           | Type   | Default                  | Description |
 |---------------|--------|--------------------------|-------------|
