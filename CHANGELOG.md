@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.6a2](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.6a2) (2026-08-15)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.6a1...0.0.6a2)
+
+**Merged pull requests:**
+
+- docs: add AGENTS.md with per-repo agent conventions [\#23](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/23) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.6a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.6a1) (2026-08-14)
 
 [Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.5a2...0.0.6a1)
