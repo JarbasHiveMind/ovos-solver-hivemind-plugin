@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.7a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.7a1) (2026-09-04)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.6a2...0.0.7a1)
+
+**Merged pull requests:**
+
+- fix: require a v3-Noise-capable hivemind\_bus\_client \(\>=1.0.16a1\) [\#25](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/25) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.6a2](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.6a2) (2026-08-15)
 
 [Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.6a1...0.0.6a2)
