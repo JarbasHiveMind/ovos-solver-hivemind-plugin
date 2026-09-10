@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.0.8a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.8a1) (2026-09-10)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.7a1...0.0.8a1)
+
+**Closed issues:**
+
+- Forbidden neon.plugin.solver entry-point + no tests [\#16](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/issues/16)
+
+**Merged pull requests:**
+
+- fix: pin hivescope\>=0.8.5a2 so the e2e runs against a v3-aware node [\#28](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/28) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.0.7a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.7a1) (2026-09-04)
 
 [Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.6a2...0.0.7a1)
