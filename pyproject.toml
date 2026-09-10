@@ -9,7 +9,12 @@ readme = "README.md"
 authors = [{ name = "jarbasAI", email = "jarbasai@mailfence.com" }]
 license = "MIT"
 requires-python = ">=3.10"
-dynamic = ["version", "dependencies"]
+dynamic = ["version"]
+dependencies = [
+    "ovos-plugin-manager>=2.1.0,<3.0.0",
+    "ovos-translate-server-plugin",
+    "hivemind_bus_client>=1.0.16a1",
+]
 
 [project.urls]
 Homepage = "https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin"
@@ -18,7 +23,7 @@ Homepage = "https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin"
 test = [
     "pytest",
     "pytest-cov",
-    "hivescope",
+    "hivescope>=0.8.5a2",
 ]
 # Alias so gh-automations' `pip install -e ".[dev]"` first-attempt path
 # resolves; without `dev` it falls through to a buggy `pip install test`
@@ -26,7 +31,7 @@ test = [
 dev = [
     "pytest",
     "pytest-cov",
-    "hivescope",
+    "hivescope>=0.8.5a2",
 ]
 
 [project.entry-points."opm.solver.question"]
@@ -38,4 +43,3 @@ include-package-data = true
 
 [tool.setuptools.dynamic]
 version = { attr = "ovos_hivemind_solver.version.__version__" }
-dependencies = { file = ["requirements.txt"] }
