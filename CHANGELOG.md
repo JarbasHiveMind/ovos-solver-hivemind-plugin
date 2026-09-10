@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.10a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.10a1) (2026-09-10)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.9a1...0.0.10a1)
+
+**Merged pull requests:**
+
+- fix: fall back to the configured language when a declared session names none [\#31](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/31) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.0.9a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.9a1) (2026-09-10)
 
 [Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.8a1...0.0.9a1)
