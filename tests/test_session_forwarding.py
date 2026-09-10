@@ -44,3 +44,33 @@ def test_get_spoken_answer_without_context_carries_no_session():
     assert solver.hm.emit_mycroft.called
     (sent_msg,), _ = solver.hm.emit_mycroft.call_args
     assert "session" not in sent_msg.context
+
+
+def test_get_spoken_answer_declared_session_without_lang_falls_back():
+    solver = _new_solver_with_mock_hm()
+    solver.config["lang"] = "pt-pt"
+
+    solver.get_spoken_answer(
+        "hello",
+        context={"session": {"session_id": "matrix-!r:x"}},
+    )
+
+    assert solver.hm.emit_mycroft.called
+    (sent_msg,), _ = solver.hm.emit_mycroft.call_args
+    assert sent_msg.data["lang"] == "pt-pt"
+    assert sent_msg.context["session"]["session_id"] == "matrix-!r:x"
+
+
+def test_get_spoken_answer_declared_session_lang_still_wins():
+    solver = _new_solver_with_mock_hm()
+    solver.config["lang"] = "pt-pt"
+
+    solver.get_spoken_answer(
+        "hello",
+        context={"session": {"session_id": "matrix-!r:x", "lang": "en-US"}},
+    )
+
+    assert solver.hm.emit_mycroft.called
+    (sent_msg,), _ = solver.hm.emit_mycroft.call_args
+    assert sent_msg.data["lang"] == "en-US"
+    assert sent_msg.context["session"]["session_id"] == "matrix-!r:x"
