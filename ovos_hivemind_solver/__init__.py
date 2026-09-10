@@ -89,7 +89,8 @@ class HiveMindSolver(QuestionSolver):
         context = context or {}
         msg_context = {}
         if "session" in context:
-            lang = context["session"]["lang"]
+            lang = context["session"].get("lang") or context.get("lang") or \
+                self.config.get("lang", "en-us")
             msg_context["session"] = context["session"]
         else:
             lang = context.get("lang") or self.config.get("lang", "en-us")
