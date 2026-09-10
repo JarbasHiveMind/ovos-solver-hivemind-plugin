@@ -1,16 +1,100 @@
 # Changelog
 
-## [0.0.3a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.3a1) (2025-02-06)
+## [0.0.10a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.10a1) (2026-09-10)
 
-[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/V0.0.2...0.0.3a1)
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.9a1...0.0.10a1)
 
 **Merged pull requests:**
 
-- fix:typing [\#3](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/3) ([JarbasAl](https://github.com/JarbasAl))
+- fix: fall back to the configured language when a declared session names none [\#31](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/31) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
 
-## [V0.0.2](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/V0.0.2) (2025-02-06)
+## [0.0.9a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.9a1) (2026-09-10)
 
-[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.2...V0.0.2)
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.8a1...0.0.9a1)
+
+**Merged pull requests:**
+
+- fix: forward the caller's declared session to the HiveMind utterance [\#27](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/27) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
+## [0.0.8a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.8a1) (2026-09-10)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.7a1...0.0.8a1)
+
+**Closed issues:**
+
+- Forbidden neon.plugin.solver entry-point + no tests [\#16](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/issues/16)
+
+**Merged pull requests:**
+
+- fix: pin hivescope\>=0.8.5a2 so the e2e runs against a v3-aware node [\#28](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/28) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
+## [0.0.7a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.7a1) (2026-09-04)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.6a2...0.0.7a1)
+
+**Merged pull requests:**
+
+- fix: require a v3-Noise-capable hivemind\_bus\_client \(\>=1.0.16a1\) [\#25](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/25) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.0.6a2](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.6a2) (2026-08-15)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.6a1...0.0.6a2)
+
+**Merged pull requests:**
+
+- docs: add AGENTS.md with per-repo agent conventions [\#23](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/23) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.0.6a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.6a1) (2026-08-14)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.5a2...0.0.6a1)
+
+**Merged pull requests:**
+
+- fix: enable websocket keepalive by default so the hub does not drop idle sessions [\#21](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/21) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.0.5a2](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.5a2) (2026-07-31)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.5a1...0.0.5a2)
+
+**Merged pull requests:**
+
+- docs: rewrite README in Simplified Technical English [\#19](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/19) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.0.5a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.5a1) (2026-06-23)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.4a3...0.0.5a1)
+
+**Merged pull requests:**
+
+- fix: register solver under opm.solver.question + e2e tests [\#17](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/17) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.0.4a3](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.4a3) (2026-06-20)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.4a2...0.0.4a3)
+
+**Merged pull requests:**
+
+- build: modernize packaging \(pyproject\) + CI \(gh-automations\) [\#13](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/13) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.0.4a2](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.4a2) (2026-06-05)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.4a1...0.0.4a2)
+
+**Merged pull requests:**
+
+- docs: zero-to-hero README and docs/ [\#11](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/11) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.0.4a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.4a1) (2025-12-18)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/V0.0.3...0.0.4a1)
+
+**Merged pull requests:**
+
+- Configure Renovate [\#5](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/5) ([renovate[bot]](https://github.com/apps/renovate))
+
+## [V0.0.3](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/V0.0.3) (2025-02-06)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.3...V0.0.3)
 
 
 

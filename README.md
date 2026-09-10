@@ -1,74 +1,117 @@
-# HiveMind solver
+# ovos-solver-hivemind-plugin
 
-exposes a [HiveMind](https://jarbashivemind.github.io/HiveMind-community-docs/) connection as a [OVOS solver plugin](https://openvoiceos.github.io/ovos-technical-manual/solvers/)
+Exposes a [HiveMind](https://jarbashivemind.github.io/HiveMind-community-docs/)
+connection as an [OVOS solver plugin](https://openvoiceos.github.io/ovos-technical-manual/solvers/).
 
-use cases:
-- allow your apps to get responses from a remote HiveMind
-- expose HiveMind to any OpenAI compatible UI, via [ovos-persona-server](https://github.com/OpenVoiceOS/ovos-persona-server)
-- Integrate HiveMind/OVOS into a [MOS (Mixture Of Solvers)](https://github.com/TigreGotico/ovos-MoS)
+A solver plugin is a Q&A backend: given a question, return a spoken answer. This
+plugin sends the question to a remote HiveMind hub, waits for the hub's `speak`
+responses, and returns them as the answer. Any application that uses OVOS solvers can
+use a HiveMind hub as its answering backend.
+
+**Use cases:**
+- Route questions from an app to a remote OVOS/HiveMind hub.
+- Expose HiveMind to any OpenAI-compatible UI via
+  [ovos-persona-server](https://github.com/OpenVoiceOS/ovos-persona-server).
+- Integrate HiveMind/OVOS as one solver in a
+  [Mixture of Solvers (MoS)](https://github.com/TigreGotico/ovos-MoS).
 
 ## Install
 
-`pip install ovos-solver-hivemind-plugin`
-
-## Setup
-
-You need to register the solver in the HiveMind server
 ```bash
-$ hivemind-core add-client
-Credentials added to database!
-
-Node ID: 2
-Friendly Name: HiveMind-Node-2
-Access Key: 5a9e580a2773a262cbb23fe9759881ff
-Password: 9b247ca66c7cd2b6388ad49ca504279d
-Encryption Key: 4185240103de0770
-WARNING: Encryption Key is deprecated, only use if your client does not support password
+pip install ovos-solver-hivemind-plugin
 ```
 
-And then set the identity file in the satellite device (where the solver will run)
+## Quickstart
+
+### 1. Register a client on the HiveMind hub
+
+On the machine running `hivemind-core`:
+
 ```bash
-$ hivemind-client set-identity --key 5a9e580a2773a262cbb23fe9759881ff --password 9b247ca66c7cd2b6388ad49ca504279d --host 0.0.0.0 --port 5678 --siteid test
-identity saved: /home/miro/.config/hivemind/_identity.json
+hivemind-core add-client
+# note the Access Key and Password
 ```
 
-check the created identity file if you like
+### 2. Set the identity on the client device
+
 ```bash
-$ cat ~/.config/hivemind/_identity.json
-{
-    "password": "9b247ca66c7cd2b6388ad49ca504279d",
-    "access_key": "5a9e580a2773a262cbb23fe9759881ff",
-    "site_id": "test",
-    "default_port": 5678,
-    "default_master": "ws://0.0.0.0"
-}
+hivemind-client set-identity \
+  --key <access_key> \
+  --password <password> \
+  --host <hub_ip> --port 5678 --siteid solver
 ```
 
-test that a connection is possible using the identity file
+Verify:
+
 ```bash
-$ hivemind-client test-identity
-(...)
-2024-05-20 21:22:28.003 - OVOS - hivemind_bus_client.client:__init__:112 - INFO - Session ID: 34d75c93-4e65-4ea9-b5f4-87169dcfda01
-(...)
-== Identity successfully connected to HiveMind!
+hivemind-client test-identity
+# should print: == Identity successfully connected to HiveMind!
 ```
 
-## Usage
-
-For usage with any solver framework, such as persona, use `"ovos-solver-hivemind-plugin"` for the solver id
-
-Standalone usage
+### 3. Use the solver
 
 ```python
 from ovos_hivemind_solver import HiveMindSolver
 
-bot = HiveMindSolver()
-bot.connect()  # connection info from identity file
-print(bot.spoken_answer("what is the speed of light?"))
+solver = HiveMindSolver(config={"autoconnect": True})
+print(solver.spoken_answer("what is the speed of light?"))
 ```
+
+Or connect manually:
+
+```python
+solver = HiveMindSolver()
+solver.connect()   # uses the identity file
+print(solver.spoken_answer("what is the capital of France?"))
+```
+
+## Configuration
+
+| Key           | Type   | Default                    | Description |
+|---------------|--------|----------------------------|-------------|
+| `autoconnect` | bool   | `false`                    | Connect to HiveMind automatically at construction time. |
+| `useragent`   | string | `"ovos-hivemind-solver"`   | User-agent string sent to the hub. |
+| `site_id`     | string | value from identity file   | Site ID for the HiveMind connection. |
+| `lang`        | string | `"en-us"`                  | Default language when none is in context. |
+
+Connection credentials (host, port, key, password) come from the identity file set
+with `hivemind-client set-identity`. They cannot be passed inline.
+
+## Using with ovos-persona
+
+Add it as a solver in a persona JSON file:
+
+```json
+{
+  "name": "HiveMind",
+  "solvers": [
+    {
+      "module": "ovos-solver-hivemind-plugin",
+      "ovos-solver-hivemind-plugin": {
+        "autoconnect": true
+      }
+    }
+  ]
+}
+```
+
+## Using with ovos-persona-server
+
+Start `ovos-persona-server` with a persona that includes this solver. Any
+OpenAI-compatible client can then query HiveMind via the persona server's REST API.
+
+## Documentation
+
+- [`docs/solver_integration.md`](docs/solver_integration.md): how the solver
+  integrates with the OVOS solver framework.
+- [`docs/configuration.md`](docs/configuration.md): full configuration reference.
 
 ## Credits
 
-![image](https://github.com/user-attachments/assets/809588a2-32a2-406c-98c0-f88bf7753cb4)
+This work was sponsored by VisioLab, part of
+[Royal Dutch Visio](https://visio.org/), the research and education center for
+assistive technology for blind and visually impaired people.
 
-> This work was sponsored by VisioLab, part of [Royal Dutch Visio](https://visio.org/), is the test, education, and research center in the field of (innovative) assistive technology for blind and visually impaired people and professionals. We explore (new) technological developments such as Voice, VR and AI and make the knowledge and expertise we gain available to everyone.
+## License
+
+Apache 2.0.
