@@ -87,12 +87,15 @@ class HiveMindSolver(QuestionSolver):
         self._responses = []
         self._extend_timeout = False
         context = context or {}
+        msg_context = {}
         if "session" in context:
             lang = context["session"]["lang"]
+            msg_context["session"] = context["session"]
         else:
             lang = context.get("lang") or self.config.get("lang", "en-us")
         mycroft_msg = Message("recognizer_loop:utterance",
-                              {"utterances": [query], "lang": lang})
+                              {"utterances": [query], "lang": lang},
+                              msg_context)
         self.hm.emit_mycroft(mycroft_msg)
         self._response.wait(timeout=timeout)
         while self._extend_timeout:
