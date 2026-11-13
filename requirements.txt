@@ -1,3 +1,0 @@
-ovos-plugin-manager
-ovos-translate-server-plugin
-hivemind_bus_client>=0.0.4a21
