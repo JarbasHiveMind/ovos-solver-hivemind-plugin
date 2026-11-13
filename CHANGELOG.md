@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.11a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.11a1) (2026-11-13)
+
+[Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.10a1...0.0.11a1)
+
+**Merged pull requests:**
+
+- fix\(ci\): set test\_path so the build test actually runs the tests [\#33](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/pull/33) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.0.10a1](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/tree/0.0.10a1) (2026-09-10)
 
 [Full Changelog](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/compare/0.0.9a1...0.0.10a1)
